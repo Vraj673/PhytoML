@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Home') }} - {{ _('Plant Disease Detection System') }}{% endblock %}
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3 shadow-sm">
+    <div class="row align-items-center">
+        <div class="col-md-7">
+            <h1 class="display-6 fw-bold text-success">{{ _('AI-Based Plant Disease Detection & Recommendation System') }}</h1>
+            <p class="col-md-10 fs-5 mt-3">
+                {{ _('Upload a photo of a plant leaf and get an instant AI-powered diagnosis using Computer Vision (OpenCV) and Machine Learning (Random Forest), along with symptoms, causes, and treatment recommendations.') }}
+            </p>
+            <div class="mt-4">
+                {% if current_user.is_authenticated %}
+                    <a class="btn btn-success btn-lg" href="{{ url_for('prediction.upload') }}">
+                        <i class="bi bi-cloud-upload"></i> {{ _('Upload a Leaf Image') }}
+                    </a>
+                {% else %}
+                    <a class="btn btn-success btn-lg" href="{{ url_for('auth.register') }}">{{ _('Get Started') }}</a>
+                    <a class="btn btn-outline-success btn-lg" href="{{ url_for('auth.login') }}">{{ _('Login') }}</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-5 text-center">
+            <i class="bi bi-flower3" style="font-size: 10rem; color:#66bb6a;"></i>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mb-5">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+                <i class="bi bi-camera fs-1 text-success"></i>
+                <h5 class="card-title mt-3">{{ _('1. Upload a Leaf Photo') }}</h5>
+                <p class="card-text text-muted">{{ _('Take or upload a clear photo of the affected plant leaf.') }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+                <i class="bi bi-cpu fs-1 text-success"></i>
+                <h5 class="card-title mt-3">{{ _('2. AI Analysis') }}</h5>
+                <p class="card-text text-muted">{{ _('OpenCV preprocessing + a Random Forest classifier detect the disease with a confidence score.') }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center">
+                <i class="bi bi-clipboard2-pulse fs-1 text-success"></i>
+                <h5 class="card-title mt-3">{{ _('3. Get Recommendations') }}</h5>
+                <p class="card-text text-muted">{{ _('View symptoms, causes, and step-by-step treatment recommendations.') }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

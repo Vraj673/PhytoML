@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Prediction History') }}{% endblock %}
+{% block content %}
+<h3 class="mb-3"><i class="bi bi-clock-history"></i> {{ _('My Prediction History') }}</h3>
+
+<!-- Filter: All / Healthy / Diseased -->
+<ul class="nav nav-pills mb-3 gap-1">
+    <li class="nav-item">
+        <a class="nav-link {{ 'active' if not status and not disease_label }}"
+           href="{{ url_for('prediction.history') }}">{{ _('All') }} ({{ counts.all }})</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{ 'active' if status == 'healthy' }}"
+           href="{{ url_for('prediction.history', status='healthy') }}">
+            <i class="bi bi-check-circle"></i> {{ _('Healthy') }} ({{ counts.healthy }})</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{ 'active' if status == 'diseased' }}"
+           href="{{ url_for('prediction.history', status='diseased') }}">
+            <i class="bi bi-exclamation-triangle"></i> {{ _('Diseased') }} ({{ counts.diseased }})</a>
+    </li>
+</ul>
+
+{% if disease_label %}
+<div class="alert alert-info py-2 d-flex justify-content-between align-items-center">
+    <span>{{ _('Showing only') }}: <strong>{{ disease_label | pretty_class }}</strong></span>
+    <a href="{{ url_for('prediction.history') }}" class="btn btn-sm btn-outline-secondary">{{ _('Clear filter') }}</a>
+</div>
+{% endif %}
+
+<div class="card shadow-sm border-0">
+    <div class="card-body p-0">
+        {% if predictions %}
+        <table class="table table-hover mb-0 align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>{{ _('Image') }}</th>
+                    <th>{{ _('Predicted Class') }}</th>
+                    <th>{{ _('Confidence') }}</th>
+                    <th>{{ _('Date') }}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in predictions %}
+                <tr>
+                    <td><img src="{{ url_for('static', filename=p.image_path) }}" width="55" height="55" style="object-fit:cover;" class="rounded"></td>
+                    <td>{{ p.predicted_class | pretty_class }}</td>
+                    <td>
+                        <span class="badge {{ 'bg-success' if 'healthy' in p.predicted_class else 'bg-danger' }}">
+                            {{ p.confidence }}%
+                        </span>
+                    </td>
+                    <td>{{ p.created_at | datetimeformat('d MMM y, HH:mm') }}</td>
+                    <td><a href="{{ url_for('prediction.result', prediction_id=p.id) }}" class="btn btn-sm btn-outline-success">{{ _('View Details') }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% elif counts.all %}
+        <p class="text-muted p-3 mb-0">{{ _('No plants match this filter.') }}
+            <a href="{{ url_for('prediction.history') }}">{{ _('Show all') }}</a></p>
+        {% else %}
+        <p class="text-muted p-3 mb-0">{{ _('No predictions yet.') }} <a href="{{ url_for('prediction.upload') }}">{{ _('Upload your first leaf image') }}</a>.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

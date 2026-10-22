@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}{{ _('My Profile') }}{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <h3 class="mb-4 text-success"><i class="bi bi-person-circle"></i> {{ _('My Profile') }}</h3>
+                <form method="POST" action="{{ url_for('user.profile') }}">
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Username') }}</label>
+                        <input type="text" class="form-control" value="{{ current_user.username }}" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Email') }}</label>
+                        <input type="email" class="form-control" value="{{ current_user.email }}" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Full Name') }}</label>
+                        <input type="text" name="full_name" class="form-control" value="{{ current_user.full_name }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Phone Number') }}</label>
+                        <input type="text" name="phone" class="form-control" value="{{ current_user.phone or '' }}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Address') }}</label>
+                        <input type="text" name="address" class="form-control" value="{{ current_user.address or '' }}">
+                    </div>
+                    <hr>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('New Password') }} <span class="text-muted small">({{ _('leave blank to keep current password') }})</span></label>
+                        <input type="password" name="new_password" class="form-control" minlength="6">
+                    </div>
+                    <button type="submit" class="btn btn-success">{{ _('Save Changes') }}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

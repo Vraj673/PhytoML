@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Register') }}{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <h3 class="mb-4 text-success"><i class="bi bi-person-plus"></i> {{ _('Create an Account') }}</h3>
+                <form method="POST" action="{{ url_for('auth.register') }}">
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Full Name') }}</label>
+                        <input type="text" name="full_name" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Username') }}</label>
+                        <input type="text" name="username" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Email Address') }}</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Phone Number') }}</label>
+                        <input type="text" name="phone" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Address') }}</label>
+                        <input type="text" name="address" class="form-control">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">{{ _('Password') }}</label>
+                            <input type="password" name="password" class="form-control" minlength="6" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">{{ _('Confirm Password') }}</label>
+                            <input type="password" name="confirm_password" class="form-control" minlength="6" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">{{ _('Register') }}</button>
+                </form>
+                <p class="text-center mt-3 mb-0">
+                    {{ _('Already have an account?') }} <a href="{{ url_for('auth.login') }}">{{ _('Login here') }}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+/*
+ style.css
+ ---------
+ Small set of custom tweaks layered on top of Bootstrap 5 to give the
+ Plant Disease Detection System a cohesive, "botanical" look and feel.
+*/
+
+body {
+    background-color: #f4f8f4;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.card {
+    border-radius: 0.75rem;
+}
+
+.navbar-brand {
+    letter-spacing: 0.3px;
+}
+
+.btn-success {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+}
+
+.btn-success:hover {
+    background-color: #256428;
+    border-color: #256428;
+}
+
+.btn-outline-success {
+    color: #2e7d32;
+    border-color: #2e7d32;
+}
+
+.btn-outline-success:hover {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+}
+
+.table img {
+    object-fit: cover;
+}
+
+.progress {
+    border-radius: 0.5rem;
+}
+
+footer {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+}
+
+/* Responsive tweak: shrink hero icon on small screens */
+@media (max-width: 768px) {
+    .display-6 {
+        font-size: 1.8rem;
+    }
+}

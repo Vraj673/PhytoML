@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Edit Disease Info') }}{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <h3 class="mb-1">{{ disease.crop_name }}</h3>
+                <p class="text-muted">{{ _('Class label') }}: <code>{{ disease.class_label }}</code></p>
+                <form method="POST" action="{{ url_for('admin.edit_disease', disease_id=disease.id) }}">
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Disease Name') }}</label>
+                        <input type="text" name="disease_name" class="form-control" value="{{ disease.disease_name }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Symptoms') }}</label>
+                        <textarea name="symptoms" class="form-control" rows="3" required>{{ disease.symptoms }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Causes') }}</label>
+                        <textarea name="causes" class="form-control" rows="3" required>{{ disease.causes }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Treatment Recommendation') }}</label>
+                        <textarea name="treatment" class="form-control" rows="3" required>{{ disease.treatment }}</textarea>
+                    </div>
+
+                    {# ---- Translations (Hindi, Gujarati, ...). Leave a field blank to fall back to English. ---- #}
+                    {% for code, lang_name in other_languages.items() %}
+                    {% set t = translations.get(code) %}
+                    <hr>
+                    <h5 class="mb-3"><i class="bi bi-translate"></i> {{ lang_name }}</h5>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Crop Name') }}</label>
+                        <input type="text" name="{{ code }}_crop_name" class="form-control" value="{{ t.crop_name if t and t.crop_name else '' }}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Disease Name') }}</label>
+                        <input type="text" name="{{ code }}_disease_name" class="form-control" value="{{ t.disease_name if t and t.disease_name else '' }}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Symptoms') }}</label>
+                        <textarea name="{{ code }}_symptoms" class="form-control" rows="3">{{ t.symptoms if t and t.symptoms else '' }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Causes') }}</label>
+                        <textarea name="{{ code }}_causes" class="form-control" rows="3">{{ t.causes if t and t.causes else '' }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ _('Treatment Recommendation') }}</label>
+                        <textarea name="{{ code }}_treatment" class="form-control" rows="3">{{ t.treatment if t and t.treatment else '' }}</textarea>
+                    </div>
+                    {% endfor %}
+
+                    <button type="submit" class="btn btn-success">{{ _('Save Changes') }}</button>
+                    <a href="{{ url_for('admin.diseases') }}" class="btn btn-outline-secondary">{{ _('Cancel') }}</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

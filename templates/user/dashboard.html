@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Dashboard') }}{% endblock %}
+{% block content %}
+<h3 class="mb-4">{{ _('Welcome') }}, {{ current_user.full_name }} 👋</h3>
+
+<div class="row g-4 mb-4">
+    <div class="col-md-3">
+        <a href="{{ url_for('prediction.history') }}" class="text-decoration-none">
+            <div class="card shadow-sm border-0 text-white h-100" style="background-color:#2e7d32;">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-1">{{ _('Total Scans') }}</h6>
+                    <h2 class="fw-bold">{{ total_predictions }}</h2>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a href="{{ url_for('prediction.history', status='healthy') }}" class="text-decoration-none">
+            <div class="card shadow-sm border-0 text-white h-100" style="background-color:#00897b;">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-1">{{ _('Healthy Plants') }}</h6>
+                    <h2 class="fw-bold">{{ healthy_count }}</h2>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a href="{{ url_for('prediction.history', status='diseased') }}" class="text-decoration-none">
+            <div class="card shadow-sm border-0 text-white h-100" style="background-color:#c62828;">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-1">{{ _('Diseased Cases Detected') }}</h6>
+                    <h2 class="fw-bold">{{ diseased_count }}</h2>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 text-white h-100" style="background-color:#1565c0;">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-1">{{ _('Quick Action') }}</h6>
+                <a href="{{ url_for('prediction.upload') }}" class="btn btn-light btn-sm mt-1">
+                    <i class="bi bi-cloud-upload"></i> {{ _('Upload New Image') }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== Weather widget ===================== -->
+<div class="card shadow-sm border-0 mb-4">
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
+            <div>
+                <h6 class="fw-bold mb-2"><i class="bi bi-cloud-sun"></i> {{ _('Local Weather & Disease Risk') }}</h6>
+                {% if weather %}
+                    <div class="d-flex align-items-center gap-4 flex-wrap">
+                        <div>
+                            <span class="fs-3 fw-bold">{{ weather.temperature_c }}&deg;C</span>
+                            <span class="text-muted ms-1">{{ weather.condition }}</span>
+                        </div>
+                        <div class="text-muted small">
+                            <i class="bi bi-droplet"></i> {{ _('Humidity') }}: {{ weather.humidity_pct }}%&nbsp;&nbsp;
+                            <i class="bi bi-wind"></i> {{ _('Wind') }}: {{ weather.wind_kmh }} km/h
+                        </div>
+                    </div>
+                    <p class="small text-muted mb-0 mt-1">{{ weather.location_name }}{% if weather.country %}, {{ weather.country }}{% endif %}</p>
+                    <span class="badge bg-{{ weather.risk.color }} mt-2">{{ _('Disease Risk') }}: {{ weather.risk.level }}</span>
+                    <p class="small mt-2 mb-0">{{ weather.risk.message }}</p>
+                {% else %}
+                    <p class="text-muted mb-0">{{ _("Couldn't load weather for") }} "{{ weather_city }}". {{ _('Try another city below.') }}</p>
+                {% endif %}
+            </div>
+            <form method="POST" action="{{ url_for('user.set_weather_city') }}" class="d-flex gap-2">
+                <input type="text" name="city" class="form-control form-control-sm" placeholder="{{ _('Enter city') }}" value="{{ weather_city }}" style="max-width:160px;">
+                <button type="submit" class="btn btn-sm btn-outline-primary">{{ _('Check') }}</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== Charts ===================== -->
+<div class="row g-4 mb-4">
+    <div class="col-md-5">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-header bg-white fw-bold">{{ _('Healthy vs Diseased Plants') }}</div>
+            <div class="card-body">
+                {% if total_predictions %}
+                    <div style="position:relative; height:300px;"><canvas id="healthChart"></canvas></div>
+                    <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+                        <a href="{{ url_for('prediction.history', status='healthy') }}" class="btn btn-sm btn-success">
+                            <i class="bi bi-check-circle"></i> {{ _('View healthy plants') }} ({{ healthy_count }})
+                        </a>
+                        <a href="{{ url_for('prediction.history', status='diseased') }}" class="btn btn-sm btn-danger">
+                            <i class="bi bi-exclamation-triangle"></i> {{ _('View diseased plants') }} ({{ diseased_count }})
+                        </a>
+                    </div>
+                    <p class="text-muted small text-center mb-0 mt-2">{{ _('Click a slice to see the list.') }}</p>
+                {% else %}
+                    <p class="text-muted mb-0">{{ _('No predictions yet.') }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-header bg-white fw-bold">{{ _('Breakdown by Disease') }}</div>
+            <div class="card-body">
+                {% if disease_labels %}
+                    <div style="position:relative; height:300px;"><canvas id="diseaseChart"></canvas></div>
+                    <p class="text-muted small text-center mb-0 mt-2">{{ _('Click a slice to see the list.') }}</p>
+                {% else %}
+                    <p class="text-muted mb-0">{{ _('No predictions yet.') }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm border-0 mb-4">
+    <div class="card-header bg-white fw-bold">{{ _('Scans Over the Last 14 Days') }}</div>
+    <div class="card-body">
+        <canvas id="trendChart" height="80"></canvas>
+    </div>
+</div>
+
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white fw-bold">{{ _('Recent Predictions') }}</div>
+    <div class="card-body p-0">
+        {% if recent_predictions %}
+        <table class="table table-hover mb-0 align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>{{ _('Image') }}</th>
+                    <th>{{ _('Predicted Class') }}</th>
+                    <th>{{ _('Confidence') }}</th>
+                    <th>{{ _('Date') }}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in recent_predictions %}
+                <tr>
+                    <td><img src="{{ url_for('static', filename=p.image_path) }}" width="50" height="50" style="object-fit:cover;" class="rounded"></td>
+                    <td>{{ p.predicted_class | pretty_class }}</td>
+                    <td>{{ p.confidence }}%</td>
+                    <td>{{ p.created_at | datetimeformat('d MMM y, HH:mm') }}</td>
+                    <td><a href="{{ url_for('prediction.result', prediction_id=p.id) }}" class="btn btn-sm btn-outline-success">{{ _('View') }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="text-muted p-3 mb-0">{{ _('No predictions yet.') }} <a href="{{ url_for('prediction.upload') }}">{{ _('Upload your first leaf image') }}</a>.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/chart_helpers.js') }}"></script>
+<script>
+    const legendOptions = { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } };
+
+    // ---- Scans over the last 14 days (line) ----
+    const trendCtx = document.getElementById('trendChart');
+    if (trendCtx) {
+        new Chart(trendCtx, {
+            type: 'line',
+            data: {
+                labels: {{ trend_labels | tojson }},
+                datasets: [{
+                    label: {{ _('Scans') | tojson }},
+                    data: {{ trend_values | tojson }},
+                    borderColor: '#2e7d32',
+                    backgroundColor: 'rgba(46,125,50,0.12)',
+                    fill: true,
+                    tension: 0.3,
+                }]
+            },
+            options: {
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, ticks: { precision: 0 } } }
+            }
+        });
+    }
+
+    // ---- Healthy vs diseased (doughnut, with % and clickable slices) ----
+    const healthCtx = document.getElementById('healthChart');
+    if (healthCtx) {
+        new Chart(healthCtx, {
+            type: 'doughnut',
+            data: {
+                labels: [{{ _('Healthy') | tojson }}, {{ _('Diseased') | tojson }}],
+                datasets: [{
+                    data: [{{ healthy_count }}, {{ diseased_count }}],
+                    backgroundColor: ['#2e7d32', '#c62828'],
+                }]
+            },
+            options: Object.assign({
+                maintainAspectRatio: false,
+                plugins: { legend: legendOptions, tooltip: ChartHelpers.percentTooltip }
+            }, ChartHelpers.linkSlices({{ health_urls | tojson }})),
+            plugins: [ChartHelpers.percentLabels]
+        });
+    }
+
+    // ---- Breakdown by disease (doughnut, with % and clickable slices) ----
+    const diseaseCtx = document.getElementById('diseaseChart');
+    if (diseaseCtx) {
+        new Chart(diseaseCtx, {
+            type: 'doughnut',
+            data: {
+                labels: {{ disease_labels | tojson }},
+                datasets: [{
+                    data: {{ disease_values | tojson }},
+                    backgroundColor: ChartHelpers.PALETTE,
+                }]
+            },
+            options: Object.assign({
+                maintainAspectRatio: false,
+                plugins: { legend: legendOptions, tooltip: ChartHelpers.percentTooltip }
+            }, ChartHelpers.linkSlices({{ disease_urls | tojson }})),
+            plugins: [ChartHelpers.percentLabels]
+        });
+    }
+</script>
+{% endblock %}

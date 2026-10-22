@@ -1,0 +1,677 @@
+# Gujarati translations for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-10 11:41+0000\n"
+"PO-Revision-Date: 2026-10-10 10:16+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: gu\n"
+"Language-Team: gu <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: app.py:40
+msgid "Please log in to access this page."
+msgstr "આ પૃષ્ઠ ઍક્સેસ કરવા કૃપા કરીને લૉગિન કરો."
+
+#: blueprints/admin/routes.py:35
+msgid "Welcome back, admin!"
+msgstr "પાછા આવ્યા, એડમિન!"
+
+#: blueprints/admin/routes.py:38
+msgid "Invalid admin credentials."
+msgstr "અમાન્ય એડમિન ક્રેડેન્શિયલ્સ."
+
+#: blueprints/admin/routes.py:49
+msgid "Admin logged out."
+msgstr "એડમિન લૉગ આઉટ થયા."
+
+#: blueprints/admin/routes.py:144
+#, python-format
+msgid "Updated information for %(name)s."
+msgstr "%(name)s ની માહિતી અપડેટ કરવામાં આવી."
+
+#: blueprints/auth/routes.py:32
+msgid "Please fill in all required fields."
+msgstr "કૃપા કરીને બધી જરૂરી ફીલ્ડ ભરો."
+
+#: blueprints/auth/routes.py:36
+msgid "Passwords do not match."
+msgstr "પાસવર્ડ મેળ ખાતા નથી."
+
+#: blueprints/auth/routes.py:40
+msgid "Password must be at least 6 characters long."
+msgstr "પાસવર્ડ ઓછામાં ઓછા 6 અક્ષરનો હોવો જોઈએ."
+
+#: blueprints/auth/routes.py:44
+msgid "That username is already taken."
+msgstr "આ યુઝરનેમ પહેલેથી લેવાયેલું છે."
+
+#: blueprints/auth/routes.py:48
+msgid "An account with that email already exists."
+msgstr "આ ઇમેઇલ સાથે ખાતું પહેલેથી અસ્તિત્વમાં છે."
+
+#: blueprints/auth/routes.py:64
+msgid "Registration successful! Please log in."
+msgstr "નોંધણી સફળ! કૃપા કરીને લૉગિન કરો."
+
+#: blueprints/auth/routes.py:88
+#, python-format
+msgid "Welcome back, %(name)s!"
+msgstr "પાછા આવ્યા, %(name)s!"
+
+#: blueprints/auth/routes.py:92
+msgid "Invalid username/email or password."
+msgstr "અમાન્ય યુઝરનેમ/ઇમેઇલ અથવા પાસવર્ડ."
+
+#: blueprints/auth/routes.py:102
+msgid "You have been logged out."
+msgstr "તમે લૉગ આઉટ થયા છો."
+
+#: blueprints/prediction/routes.py:36
+msgid "No file part in the request."
+msgstr "વિનંતીમાં કોઈ ફાઇલ મળી નથી."
+
+#: blueprints/prediction/routes.py:42
+msgid "Please select an image to upload."
+msgstr "કૃપા કરીને અપલોડ કરવા માટે છબી પસંદ કરો."
+
+#: blueprints/prediction/routes.py:46
+msgid "Invalid file type. Please upload a PNG or JPG image."
+msgstr "અમાન્ય ફાઇલ પ્રકાર. કૃપા કરીને PNG અથવા JPG છબી અપલોડ કરો."
+
+#: blueprints/prediction/routes.py:62
+msgid "The AI model has not been trained yet. Please run 'python ml_model/train_model.py' on the server first."
+msgstr "AI મૉડેલ હજી તાલીમ પામ્યું નથી. કૃપા કરીને પહેલા સર્વર પર 'python ml_model/train_model.py' ચલાવો."
+
+#: blueprints/prediction/routes.py:68
+#, python-format
+msgid "Could not process the image: %(err)s"
+msgstr "છબી પ્રોસેસ થઈ શકી નથી: %(err)s"
+
+#: blueprints/user/routes.py:83
+msgid "Please enter a city name."
+msgstr "કૃપા કરીને શહેરનું નામ દાખલ કરો."
+
+#: blueprints/user/routes.py:99
+msgid "New password must be at least 6 characters."
+msgstr "નવો પાસવર્ડ ઓછામાં ઓછા 6 અક્ષરનો હોવો જોઈએ."
+
+#: blueprints/user/routes.py:102
+msgid "Password updated successfully."
+msgstr "પાસવર્ડ સફળતાપૂર્વક અપડેટ થયો."
+
+#: blueprints/user/routes.py:105
+msgid "Profile updated successfully."
+msgstr "પ્રોફાઇલ સફળતાપૂર્વક અપડેટ થઈ."
+
+#: templates/403.html:2
+msgid "Access Forbidden"
+msgstr "પ્રવેશ પ્રતિબંધિત"
+
+#: templates/403.html:6
+msgid "403 - Access Forbidden"
+msgstr "403 - પ્રવેશ પ્રતિબંધિત"
+
+#: templates/403.html:7
+msgid "You don't have permission to view this page."
+msgstr "તમને આ પૃષ્ઠ જોવાની પરવાનગી નથી."
+
+#: templates/403.html:8 templates/404.html:8
+msgid "Go Home"
+msgstr "હોમ પર જાઓ"
+
+#: templates/404.html:2
+msgid "Page Not Found"
+msgstr "પૃષ્ઠ મળ્યું નથી"
+
+#: templates/404.html:6
+msgid "404 - Page Not Found"
+msgstr "404 - પૃષ્ઠ મળ્યું નથી"
+
+#: templates/404.html:7
+msgid "The page you're looking for doesn't exist."
+msgstr "તમે જે પૃષ્ઠ શોધી રહ્યા છો તે અસ્તિત્વમાં નથી."
+
+#: templates/base.html:6 templates/index.html:2
+msgid "Plant Disease Detection System"
+msgstr "છોડ રોગ ઓળખ સિસ્ટમ"
+
+#: templates/base.html:20
+msgid "Plant Disease Detector"
+msgstr "છોડ રોગ ડિટેક્ટર"
+
+#: templates/admin/dashboard.html:2 templates/admin/dashboard.html:4 templates/base.html:28
+msgid "Admin Dashboard"
+msgstr "એડમિન ડેશબોર્ડ"
+
+#: templates/base.html:29
+msgid "Users"
+msgstr "વપરાશકર્તાઓ"
+
+#: templates/admin/dashboard.html:121 templates/base.html:30
+msgid "Predictions"
+msgstr "આગાહીઓ"
+
+#: templates/base.html:31
+msgid "Diseases"
+msgstr "રોગો"
+
+#: templates/base.html:32 templates/base.html:38
+msgid "Logout"
+msgstr "લૉગ આઉટ"
+
+#: templates/base.html:34 templates/user/dashboard.html:2
+msgid "Dashboard"
+msgstr "ડેશબોર્ડ"
+
+#: templates/base.html:35
+msgid "Upload Image"
+msgstr "છબી અપલોડ કરો"
+
+#: templates/base.html:36
+msgid "History"
+msgstr "ઇતિહાસ"
+
+#: templates/base.html:37
+msgid "Profile"
+msgstr "પ્રોફાઇલ"
+
+#: templates/auth/login.html:2 templates/auth/login.html:22 templates/base.html:40 templates/index.html:18
+msgid "Login"
+msgstr "લૉગિન"
+
+#: templates/auth/register.html:2 templates/auth/register.html:40 templates/base.html:41
+msgid "Register"
+msgstr "નોંધણી કરો"
+
+#: templates/base.html:42
+msgid "Admin"
+msgstr "એડમિન"
+
+#: templates/base.html:75
+msgid "AI-Based Plant Disease Detection and Recommendation System"
+msgstr "AI-આધારિત છોડ રોગ ઓળખ અને ભલામણ સિસ્ટમ"
+
+#: templates/index.html:2
+msgid "Home"
+msgstr "હોમ"
+
+#: templates/index.html:7
+msgid "AI-Based Plant Disease Detection & Recommendation System"
+msgstr "AI-આધારિત છોડ રોગ ઓળખ અને ભલામણ સિસ્ટમ"
+
+#: templates/index.html:9
+msgid ""
+"Upload a photo of a plant leaf and get an instant AI-powered diagnosis using Computer Vision (OpenCV) and Machine Learning (Random Forest), along with symptoms, causes, and treatment "
+"recommendations."
+msgstr "છોડના પાંદડાનો ફોટો અપલોડ કરો અને કમ્પ્યુટર વિઝન (OpenCV) તથા મશીન લર્નિંગ (રેન્ડમ ફોરેસ્ટ) દ્વારા તરત AI-આધારિત નિદાન મેળવો, સાથે લક્ષણો, કારણો અને સારવારની ભલામણો પણ."
+
+#: templates/index.html:14 templates/user/upload.html:9
+msgid "Upload a Leaf Image"
+msgstr "પાંદડાની છબી અપલોડ કરો"
+
+#: templates/index.html:17
+msgid "Get Started"
+msgstr "શરૂ કરો"
+
+#: templates/index.html:33
+msgid "1. Upload a Leaf Photo"
+msgstr "1. પાંદડાનો ફોટો અપલોડ કરો"
+
+#: templates/index.html:34
+msgid "Take or upload a clear photo of the affected plant leaf."
+msgstr "અસરગ્રસ્ત છોડના પાંદડાનો સ્પષ્ટ ફોટો લો અથવા અપલોડ કરો."
+
+#: templates/index.html:42
+msgid "2. AI Analysis"
+msgstr "2. AI વિશ્લેષણ"
+
+#: templates/index.html:43
+msgid "OpenCV preprocessing + a Random Forest classifier detect the disease with a confidence score."
+msgstr "OpenCV પ્રીપ્રોસેસિંગ અને રેન્ડમ ફોરેસ્ટ ક્લાસિફાયર વિશ્વાસ સ્કોર સાથે રોગ ઓળખે છે."
+
+#: templates/index.html:51
+msgid "3. Get Recommendations"
+msgstr "3. ભલામણો મેળવો"
+
+#: templates/index.html:52
+msgid "View symptoms, causes, and step-by-step treatment recommendations."
+msgstr "લક્ષણો, કારણો અને પગલે-પગલે સારવારની ભલામણો જુઓ."
+
+#: templates/admin/dashboard.html:10
+msgid "Total Users"
+msgstr "કુલ વપરાશકર્તાઓ"
+
+#: templates/admin/dashboard.html:18
+msgid "Total Predictions"
+msgstr "કુલ આગાહીઓ"
+
+#: templates/admin/dashboard.html:26
+msgid "Diseased Cases"
+msgstr "રોગગ્રસ્ત કેસો"
+
+#: templates/admin/dashboard.html:34
+msgid "Disease Entries"
+msgstr "રોગ નોંધો"
+
+#: templates/admin/dashboard.html:45
+msgid "Predictions — Last 14 Days"
+msgstr "આગાહીઓ — છેલ્લા 14 દિવસ"
+
+#: templates/admin/dashboard.html:53
+msgid "By Disease Class"
+msgstr "રોગ વર્ગ મુજબ"
+
+#: templates/admin/dashboard.html:58 templates/admin/dashboard.html:70 templates/user/dashboard.html:99 templates/user/dashboard.html:112 templates/user/dashboard.html:153 templates/user/history.html:64
+msgid "No predictions yet."
+msgstr "હજી સુધી કોઈ આગાહી નથી."
+
+#: templates/admin/dashboard.html:65
+msgid "Healthy vs. Diseased"
+msgstr "સ્વસ્થ વિ. રોગગ્રસ્ત"
+
+#: templates/admin/dashboard.html:78
+msgid "Recent Predictions (All Users)"
+msgstr "તાજેતરની આગાહીઓ (બધા વપરાશકર્તાઓ)"
+
+#: templates/admin/dashboard.html:84 templates/admin/predictions.html:12 templates/user/dashboard.html:133 templates/user/history.html:37
+msgid "Image"
+msgstr "છબી"
+
+#: templates/admin/dashboard.html:85 templates/admin/predictions.html:13
+msgid "User"
+msgstr "વપરાશકર્તા"
+
+#: templates/admin/dashboard.html:86 templates/admin/predictions.html:14 templates/user/dashboard.html:134 templates/user/history.html:38
+msgid "Predicted Class"
+msgstr "અનુમાનિત વર્ગ"
+
+#: templates/admin/dashboard.html:87 templates/admin/predictions.html:15 templates/user/dashboard.html:135 templates/user/history.html:39
+msgid "Confidence"
+msgstr "વિશ્વાસ"
+
+#: templates/admin/dashboard.html:88 templates/admin/predictions.html:16 templates/user/dashboard.html:136 templates/user/history.html:40
+msgid "Date"
+msgstr "તારીખ"
+
+#: templates/admin/dashboard.html:104 templates/admin/predictions.html:36
+msgid "No predictions recorded yet."
+msgstr "હજી સુધી કોઈ આગાહી નોંધાઈ નથી."
+
+#: templates/admin/dashboard.html:157 templates/admin/diseases.html:27 templates/user/dashboard.html:194 templates/user/history.html:15
+msgid "Healthy"
+msgstr "સ્વસ્થ"
+
+#: templates/admin/dashboard.html:157 templates/user/dashboard.html:194 templates/user/history.html:20
+msgid "Diseased"
+msgstr "રોગગ્રસ્ત"
+
+#: templates/admin/diseases.html:2
+msgid "Manage Diseases"
+msgstr "રોગોનું સંચાલન"
+
+#: templates/admin/diseases.html:4
+msgid "Disease Knowledge Base"
+msgstr "રોગ જ્ઞાન આધાર"
+
+#: templates/admin/diseases.html:12
+msgid "Crop"
+msgstr "પાક"
+
+#: templates/admin/diseases.html:13 templates/admin/diseases.html:29
+msgid "Disease"
+msgstr "રોગ"
+
+#: templates/admin/diseases.html:14
+msgid "Class Label"
+msgstr "વર્ગ લેબલ"
+
+#: templates/admin/diseases.html:15
+msgid "Status"
+msgstr "સ્થિતિ"
+
+#: templates/admin/diseases.html:32
+msgid "Edit"
+msgstr "સંપાદિત કરો"
+
+#: templates/admin/diseases.html:38
+msgid "No disease entries found."
+msgstr "કોઈ રોગ નોંધ મળી નથી."
+
+#: templates/admin/edit_disease.html:2
+msgid "Edit Disease Info"
+msgstr "રોગની માહિતી સંપાદિત કરો"
+
+#: templates/admin/edit_disease.html:9
+msgid "Class label"
+msgstr "વર્ગ લેબલ"
+
+#: templates/admin/edit_disease.html:12 templates/admin/edit_disease.html:38
+msgid "Disease Name"
+msgstr "રોગનું નામ"
+
+#: templates/admin/edit_disease.html:16 templates/admin/edit_disease.html:42 templates/user/result.html:40
+msgid "Symptoms"
+msgstr "લક્ષણો"
+
+#: templates/admin/edit_disease.html:20 templates/admin/edit_disease.html:46 templates/user/result.html:48
+msgid "Causes"
+msgstr "કારણો"
+
+#: templates/admin/edit_disease.html:24 templates/admin/edit_disease.html:50
+msgid "Treatment Recommendation"
+msgstr "સારવારની ભલામણ"
+
+#: templates/admin/edit_disease.html:34
+msgid "Crop Name"
+msgstr "પાકનું નામ"
+
+#: templates/admin/edit_disease.html:55 templates/user/profile.html:35
+msgid "Save Changes"
+msgstr "ફેરફારો સાચવો"
+
+#: templates/admin/edit_disease.html:56
+msgid "Cancel"
+msgstr "રદ કરો"
+
+#: templates/admin/login.html:2 templates/admin/login.html:8
+msgid "Admin Login"
+msgstr "એડમિન લૉગિન"
+
+#: templates/admin/login.html:11
+msgid "Admin Username"
+msgstr "એડમિન યુઝરનેમ"
+
+#: templates/admin/login.html:15 templates/auth/login.html:15 templates/auth/register.html:32
+msgid "Password"
+msgstr "પાસવર્ડ"
+
+#: templates/admin/login.html:18
+msgid "Login as Admin"
+msgstr "એડમિન તરીકે લૉગિન કરો"
+
+#: templates/admin/predictions.html:2
+msgid "All Predictions"
+msgstr "બધી આગાહીઓ"
+
+#: templates/admin/predictions.html:4
+msgid "Full Prediction History"
+msgstr "સંપૂર્ણ આગાહી ઇતિહાસ"
+
+#: templates/admin/users.html:2
+msgid "Manage Users"
+msgstr "વપરાશકર્તાઓનું સંચાલન"
+
+#: templates/admin/users.html:4
+msgid "Registered Users"
+msgstr "નોંધાયેલા વપરાશકર્તાઓ"
+
+#: templates/admin/users.html:13 templates/auth/register.html:11 templates/user/profile.html:19
+msgid "Full Name"
+msgstr "પૂરું નામ"
+
+#: templates/admin/users.html:14 templates/auth/register.html:15 templates/user/profile.html:11
+msgid "Username"
+msgstr "યુઝરનેમ"
+
+#: templates/admin/users.html:15 templates/user/profile.html:15
+msgid "Email"
+msgstr "ઇમેઇલ"
+
+#: templates/admin/users.html:16
+msgid "Phone"
+msgstr "ફોન"
+
+#: templates/admin/users.html:17 templates/user/dashboard.html:173
+msgid "Scans"
+msgstr "સ્કેન"
+
+#: templates/admin/users.html:18
+msgid "Joined"
+msgstr "જોડાયા"
+
+#: templates/admin/users.html:36
+msgid "No users registered yet."
+msgstr "હજી સુધી કોઈ વપરાશકર્તા નોંધાયા નથી."
+
+#: templates/auth/login.html:8
+msgid "User Login"
+msgstr "વપરાશકર્તા લૉગિન"
+
+#: templates/auth/login.html:11
+msgid "Username or Email"
+msgstr "યુઝરનેમ અથવા ઇમેઇલ"
+
+#: templates/auth/login.html:20
+msgid "Remember me"
+msgstr "મને યાદ રાખો"
+
+#: templates/auth/login.html:25
+msgid "Don't have an account?"
+msgstr "ખાતું નથી?"
+
+#: templates/auth/login.html:25
+msgid "Register here"
+msgstr "અહીં નોંધણી કરો"
+
+#: templates/auth/register.html:8
+msgid "Create an Account"
+msgstr "ખાતું બનાવો"
+
+#: templates/auth/register.html:19
+msgid "Email Address"
+msgstr "ઇમેઇલ સરનામું"
+
+#: templates/auth/register.html:23 templates/user/profile.html:23
+msgid "Phone Number"
+msgstr "ફોન નંબર"
+
+#: templates/auth/register.html:27 templates/user/profile.html:27
+msgid "Address"
+msgstr "સરનામું"
+
+#: templates/auth/register.html:36
+msgid "Confirm Password"
+msgstr "પાસવર્ડ ખાતરી કરો"
+
+#: templates/auth/register.html:43
+msgid "Already have an account?"
+msgstr "પહેલેથી ખાતું છે?"
+
+#: templates/auth/register.html:43
+msgid "Login here"
+msgstr "અહીં લૉગિન કરો"
+
+#: templates/user/dashboard.html:4
+msgid "Welcome"
+msgstr "સ્વાગત છે"
+
+#: templates/user/dashboard.html:11
+msgid "Total Scans"
+msgstr "કુલ સ્કેન"
+
+#: templates/user/dashboard.html:21
+msgid "Healthy Plants"
+msgstr "સ્વસ્થ છોડ"
+
+#: templates/user/dashboard.html:31
+msgid "Diseased Cases Detected"
+msgstr "ઓળખાયેલા રોગગ્રસ્ત કેસો"
+
+#: templates/user/dashboard.html:40
+msgid "Quick Action"
+msgstr "ઝડપી ક્રિયા"
+
+#: templates/user/dashboard.html:42
+msgid "Upload New Image"
+msgstr "નવી છબી અપલોડ કરો"
+
+#: templates/user/dashboard.html:54
+msgid "Local Weather & Disease Risk"
+msgstr "સ્થાનિક હવામાન અને રોગનું જોખમ"
+
+#: templates/user/dashboard.html:62
+msgid "Humidity"
+msgstr "ભેજ"
+
+#: templates/user/dashboard.html:63
+msgid "Wind"
+msgstr "પવન"
+
+#: templates/user/dashboard.html:67
+msgid "Disease Risk"
+msgstr "રોગનું જોખમ"
+
+#: templates/user/dashboard.html:70
+msgid "Couldn't load weather for"
+msgstr "હવામાન લોડ થઈ શક્યું નથી:"
+
+#: templates/user/dashboard.html:70
+msgid "Try another city below."
+msgstr "નીચે બીજું શહેર અજમાવો."
+
+#: templates/user/dashboard.html:74
+msgid "Enter city"
+msgstr "શહેર દાખલ કરો"
+
+#: templates/user/dashboard.html:75
+msgid "Check"
+msgstr "તપાસો"
+
+#: templates/user/dashboard.html:85
+msgid "Healthy vs Diseased Plants"
+msgstr "સ્વસ્થ વિરુદ્ધ રોગગ્રસ્ત છોડ"
+
+#: templates/user/dashboard.html:91
+msgid "View healthy plants"
+msgstr "સ્વસ્થ છોડ જુઓ"
+
+#: templates/user/dashboard.html:94
+msgid "View diseased plants"
+msgstr "રોગગ્રસ્ત છોડ જુઓ"
+
+#: templates/user/dashboard.html:97 templates/user/dashboard.html:110
+msgid "Click a slice to see the list."
+msgstr "યાદી જોવા માટે કોઈ ભાગ પર ક્લિક કરો."
+
+#: templates/user/dashboard.html:106
+msgid "Breakdown by Disease"
+msgstr "રોગ મુજબ વિગત"
+
+#: templates/user/dashboard.html:120
+msgid "Scans Over the Last 14 Days"
+msgstr "છેલ્લા 14 દિવસના સ્કેન"
+
+#: templates/user/dashboard.html:127
+msgid "Recent Predictions"
+msgstr "તાજેતરની આગાહીઓ"
+
+#: templates/user/dashboard.html:147
+msgid "View"
+msgstr "જુઓ"
+
+#: templates/user/dashboard.html:153 templates/user/history.html:64
+msgid "Upload your first leaf image"
+msgstr "તમારી પહેલી પાંદડાની છબી અપલોડ કરો"
+
+#: templates/user/history.html:2
+msgid "Prediction History"
+msgstr "આગાહી ઇતિહાસ"
+
+#: templates/user/history.html:4
+msgid "My Prediction History"
+msgstr "મારો આગાહી ઇતિહાસ"
+
+#: templates/user/history.html:10
+msgid "All"
+msgstr "બધા"
+
+#: templates/user/history.html:26
+msgid "Showing only"
+msgstr "ફક્ત આ બતાવી રહ્યા છીએ"
+
+#: templates/user/history.html:27
+msgid "Clear filter"
+msgstr "ફિલ્ટર દૂર કરો"
+
+#: templates/user/history.html:55
+msgid "View Details"
+msgstr "વિગતો જુઓ"
+
+#: templates/user/history.html:61
+msgid "No plants match this filter."
+msgstr "આ ફિલ્ટર સાથે કોઈ છોડ મેળ ખાતો નથી."
+
+#: templates/user/history.html:62
+msgid "Show all"
+msgstr "બધા બતાવો"
+
+#: templates/user/profile.html:2 templates/user/profile.html:8
+msgid "My Profile"
+msgstr "મારી પ્રોફાઇલ"
+
+#: templates/user/profile.html:32
+msgid "New Password"
+msgstr "નવો પાસવર્ડ"
+
+#: templates/user/profile.html:32
+msgid "leave blank to keep current password"
+msgstr "હાલનો પાસવર્ડ રાખવા ખાલી છોડો"
+
+#: templates/user/result.html:2
+msgid "Prediction Result"
+msgstr "આગાહી પરિણામ"
+
+#: templates/user/result.html:22
+msgid "Confidence Score"
+msgstr "વિશ્વાસ સ્કોર"
+
+#: templates/user/result.html:29
+msgid "Scanned on"
+msgstr "સ્કેન તારીખ"
+
+#: templates/user/result.html:56
+msgid "Treatment"
+msgstr "સારવાર"
+
+#: templates/user/result.html:64
+msgid "Great news! This leaf appears healthy."
+msgstr "સારા સમાચાર! આ પાંદડું સ્વસ્થ લાગે છે."
+
+#: templates/user/result.html:68
+msgid "No recommendation data found for this class yet. Please contact the admin."
+msgstr "આ વર્ગ માટે હજી ભલામણ ડેટા મળ્યો નથી. કૃપા કરીને એડમિનનો સંપર્ક કરો."
+
+#: templates/user/result.html:74
+msgid "Scan Another Leaf"
+msgstr "બીજું પાંદડું સ્કેન કરો"
+
+#: templates/user/result.html:77
+msgid "View History"
+msgstr "ઇતિહાસ જુઓ"
+
+#: templates/user/upload.html:2
+msgid "Upload Leaf Image"
+msgstr "પાંદડાની છબી અપલોડ કરો"
+
+#: templates/user/upload.html:19
+msgid "Detect Disease"
+msgstr "રોગ ઓળખો"
+
+#: templates/user/upload.html:22
+msgid "Supported formats: JPG, JPEG, PNG (max 5 MB)"
+msgstr "સપોર્ટેડ ફોર્મેટ: JPG, JPEG, PNG (મહત્તમ 5 MB)"
+
+#: utils/decorators.py:22
+msgid "Please log in as admin to continue."
+msgstr "ચાલુ રાખવા કૃપા કરીને એડમિન તરીકે લૉગિન કરો."
+

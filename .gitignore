@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+database/*.db
+ml_model/model.pkl
+ml_model/labels.pkl
+static/uploads/*
+!static/uploads/.gitkeep
+data/train/*
+!data/train/.gitkeep

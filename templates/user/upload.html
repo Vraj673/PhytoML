@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Upload Leaf Image') }}{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4 text-center">
+                <i class="bi bi-cloud-upload fs-1 text-success"></i>
+                <h3 class="mt-2 mb-4">{{ _('Upload a Leaf Image') }}</h3>
+                <form method="POST" action="{{ url_for('prediction.upload') }}" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <input class="form-control" type="file" name="leaf_image" id="leaf_image"
+                               accept=".png,.jpg,.jpeg" required onchange="previewImage(event)">
+                    </div>
+                    <div class="mb-3">
+                        <img id="preview" src="#" alt="Preview" class="img-fluid rounded shadow-sm d-none" style="max-height:280px;">
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">
+                        <i class="bi bi-search"></i> {{ _('Detect Disease') }}
+                    </button>
+                </form>
+                <p class="text-muted small mt-3 mb-0">{{ _('Supported formats: JPG, JPEG, PNG (max 5 MB)') }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+    function previewImage(event) {
+        const preview = document.getElementById('preview');
+        const file = event.target.files[0];
+        if (file) {
+            preview.src = URL.createObjectURL(file);
+            preview.classList.remove('d-none');
+        }
+    }
+</script>
+{% endblock %}

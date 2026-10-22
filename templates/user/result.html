@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Prediction Result') }}{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-9">
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ url_for('static', filename=record.image_path) }}"
+                         class="img-fluid rounded-start h-100" style="object-fit:cover;" alt="Uploaded leaf">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-title {{ 'text-success' if disease and disease.is_healthy else 'text-danger' }}">
+                            {% if disease %}
+                                {{ disease.crop_name }} - {{ disease.disease_name }}
+                            {% else %}
+                                {{ record.predicted_class | pretty_class }}
+                            {% endif %}
+                        </h4>
+
+                        <p class="mb-1"><strong>{{ _('Confidence Score') }}:</strong></p>
+                        <div class="progress mb-2" style="height: 24px;">
+                            <div class="progress-bar {{ 'bg-success' if disease and disease.is_healthy else 'bg-danger' }}"
+                                 role="progressbar" style="width: {{ record.confidence }}%;">
+                                {{ record.confidence }}%
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-0">{{ _('Scanned on') }} {{ record.created_at | datetimeformat('d MMM y, HH:mm') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% if disease and not disease.is_healthy %}
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h6 class="text-danger"><i class="bi bi-exclamation-triangle"></i> {{ _('Symptoms') }}</h6>
+                        <p class="small mb-0">{{ disease.symptoms }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h6 class="text-warning"><i class="bi bi-bug"></i> {{ _('Causes') }}</h6>
+                        <p class="small mb-0">{{ disease.causes }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h6 class="text-success"><i class="bi bi-clipboard2-pulse"></i> {{ _('Treatment') }}</h6>
+                        <p class="small mb-0">{{ disease.treatment }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% elif disease and disease.is_healthy %}
+        <div class="alert alert-success mt-3">
+            <i class="bi bi-check-circle"></i> {{ _('Great news! This leaf appears healthy.') }} {{ disease.treatment }}
+        </div>
+        {% else %}
+        <div class="alert alert-warning mt-3">
+            {{ _('No recommendation data found for this class yet. Please contact the admin.') }}
+        </div>
+        {% endif %}
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('prediction.upload') }}" class="btn btn-outline-success">
+                <i class="bi bi-arrow-repeat"></i> {{ _('Scan Another Leaf') }}
+            </a>
+            <a href="{{ url_for('prediction.history') }}" class="btn btn-outline-secondary">
+                <i class="bi bi-clock-history"></i> {{ _('View History') }}
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

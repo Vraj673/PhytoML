@@ -1,0 +1,697 @@
+# Translations template for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-10 11:41+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: app.py:40
+msgid "Please log in to access this page."
+msgstr ""
+
+#: blueprints/admin/routes.py:35
+msgid "Welcome back, admin!"
+msgstr ""
+
+#: blueprints/admin/routes.py:38
+msgid "Invalid admin credentials."
+msgstr ""
+
+#: blueprints/admin/routes.py:49
+msgid "Admin logged out."
+msgstr ""
+
+#: blueprints/admin/routes.py:144
+#, python-format
+msgid "Updated information for %(name)s."
+msgstr ""
+
+#: blueprints/auth/routes.py:32
+msgid "Please fill in all required fields."
+msgstr ""
+
+#: blueprints/auth/routes.py:36
+msgid "Passwords do not match."
+msgstr ""
+
+#: blueprints/auth/routes.py:40
+msgid "Password must be at least 6 characters long."
+msgstr ""
+
+#: blueprints/auth/routes.py:44
+msgid "That username is already taken."
+msgstr ""
+
+#: blueprints/auth/routes.py:48
+msgid "An account with that email already exists."
+msgstr ""
+
+#: blueprints/auth/routes.py:64
+msgid "Registration successful! Please log in."
+msgstr ""
+
+#: blueprints/auth/routes.py:88
+#, python-format
+msgid "Welcome back, %(name)s!"
+msgstr ""
+
+#: blueprints/auth/routes.py:92
+msgid "Invalid username/email or password."
+msgstr ""
+
+#: blueprints/auth/routes.py:102
+msgid "You have been logged out."
+msgstr ""
+
+#: blueprints/prediction/routes.py:36
+msgid "No file part in the request."
+msgstr ""
+
+#: blueprints/prediction/routes.py:42
+msgid "Please select an image to upload."
+msgstr ""
+
+#: blueprints/prediction/routes.py:46
+msgid "Invalid file type. Please upload a PNG or JPG image."
+msgstr ""
+
+#: blueprints/prediction/routes.py:62
+msgid ""
+"The AI model has not been trained yet. Please run 'python "
+"ml_model/train_model.py' on the server first."
+msgstr ""
+
+#: blueprints/prediction/routes.py:68
+#, python-format
+msgid "Could not process the image: %(err)s"
+msgstr ""
+
+#: blueprints/user/routes.py:83
+msgid "Please enter a city name."
+msgstr ""
+
+#: blueprints/user/routes.py:99
+msgid "New password must be at least 6 characters."
+msgstr ""
+
+#: blueprints/user/routes.py:102
+msgid "Password updated successfully."
+msgstr ""
+
+#: blueprints/user/routes.py:105
+msgid "Profile updated successfully."
+msgstr ""
+
+#: templates/403.html:2
+msgid "Access Forbidden"
+msgstr ""
+
+#: templates/403.html:6
+msgid "403 - Access Forbidden"
+msgstr ""
+
+#: templates/403.html:7
+msgid "You don't have permission to view this page."
+msgstr ""
+
+#: templates/403.html:8 templates/404.html:8
+msgid "Go Home"
+msgstr ""
+
+#: templates/404.html:2
+msgid "Page Not Found"
+msgstr ""
+
+#: templates/404.html:6
+msgid "404 - Page Not Found"
+msgstr ""
+
+#: templates/404.html:7
+msgid "The page you're looking for doesn't exist."
+msgstr ""
+
+#: templates/base.html:6 templates/index.html:2
+msgid "Plant Disease Detection System"
+msgstr ""
+
+#: templates/base.html:20
+msgid "Plant Disease Detector"
+msgstr ""
+
+#: templates/admin/dashboard.html:2 templates/admin/dashboard.html:4
+#: templates/base.html:28
+msgid "Admin Dashboard"
+msgstr ""
+
+#: templates/base.html:29
+msgid "Users"
+msgstr ""
+
+#: templates/admin/dashboard.html:121 templates/base.html:30
+msgid "Predictions"
+msgstr ""
+
+#: templates/base.html:31
+msgid "Diseases"
+msgstr ""
+
+#: templates/base.html:32 templates/base.html:38
+msgid "Logout"
+msgstr ""
+
+#: templates/base.html:34 templates/user/dashboard.html:2
+msgid "Dashboard"
+msgstr ""
+
+#: templates/base.html:35
+msgid "Upload Image"
+msgstr ""
+
+#: templates/base.html:36
+msgid "History"
+msgstr ""
+
+#: templates/base.html:37
+msgid "Profile"
+msgstr ""
+
+#: templates/auth/login.html:2 templates/auth/login.html:22
+#: templates/base.html:40 templates/index.html:18
+msgid "Login"
+msgstr ""
+
+#: templates/auth/register.html:2 templates/auth/register.html:40
+#: templates/base.html:41
+msgid "Register"
+msgstr ""
+
+#: templates/base.html:42
+msgid "Admin"
+msgstr ""
+
+#: templates/base.html:75
+msgid "AI-Based Plant Disease Detection and Recommendation System"
+msgstr ""
+
+#: templates/index.html:2
+msgid "Home"
+msgstr ""
+
+#: templates/index.html:7
+msgid "AI-Based Plant Disease Detection & Recommendation System"
+msgstr ""
+
+#: templates/index.html:9
+msgid ""
+"Upload a photo of a plant leaf and get an instant AI-powered diagnosis "
+"using Computer Vision (OpenCV) and Machine Learning (Random Forest), "
+"along with symptoms, causes, and treatment recommendations."
+msgstr ""
+
+#: templates/index.html:14 templates/user/upload.html:9
+msgid "Upload a Leaf Image"
+msgstr ""
+
+#: templates/index.html:17
+msgid "Get Started"
+msgstr ""
+
+#: templates/index.html:33
+msgid "1. Upload a Leaf Photo"
+msgstr ""
+
+#: templates/index.html:34
+msgid "Take or upload a clear photo of the affected plant leaf."
+msgstr ""
+
+#: templates/index.html:42
+msgid "2. AI Analysis"
+msgstr ""
+
+#: templates/index.html:43
+msgid ""
+"OpenCV preprocessing + a Random Forest classifier detect the disease with"
+" a confidence score."
+msgstr ""
+
+#: templates/index.html:51
+msgid "3. Get Recommendations"
+msgstr ""
+
+#: templates/index.html:52
+msgid "View symptoms, causes, and step-by-step treatment recommendations."
+msgstr ""
+
+#: templates/admin/dashboard.html:10
+msgid "Total Users"
+msgstr ""
+
+#: templates/admin/dashboard.html:18
+msgid "Total Predictions"
+msgstr ""
+
+#: templates/admin/dashboard.html:26
+msgid "Diseased Cases"
+msgstr ""
+
+#: templates/admin/dashboard.html:34
+msgid "Disease Entries"
+msgstr ""
+
+#: templates/admin/dashboard.html:45
+msgid "Predictions — Last 14 Days"
+msgstr ""
+
+#: templates/admin/dashboard.html:53
+msgid "By Disease Class"
+msgstr ""
+
+#: templates/admin/dashboard.html:58 templates/admin/dashboard.html:70
+#: templates/user/dashboard.html:99 templates/user/dashboard.html:112
+#: templates/user/dashboard.html:153 templates/user/history.html:64
+msgid "No predictions yet."
+msgstr ""
+
+#: templates/admin/dashboard.html:65
+msgid "Healthy vs. Diseased"
+msgstr ""
+
+#: templates/admin/dashboard.html:78
+msgid "Recent Predictions (All Users)"
+msgstr ""
+
+#: templates/admin/dashboard.html:84 templates/admin/predictions.html:12
+#: templates/user/dashboard.html:133 templates/user/history.html:37
+msgid "Image"
+msgstr ""
+
+#: templates/admin/dashboard.html:85 templates/admin/predictions.html:13
+msgid "User"
+msgstr ""
+
+#: templates/admin/dashboard.html:86 templates/admin/predictions.html:14
+#: templates/user/dashboard.html:134 templates/user/history.html:38
+msgid "Predicted Class"
+msgstr ""
+
+#: templates/admin/dashboard.html:87 templates/admin/predictions.html:15
+#: templates/user/dashboard.html:135 templates/user/history.html:39
+msgid "Confidence"
+msgstr ""
+
+#: templates/admin/dashboard.html:88 templates/admin/predictions.html:16
+#: templates/user/dashboard.html:136 templates/user/history.html:40
+msgid "Date"
+msgstr ""
+
+#: templates/admin/dashboard.html:104 templates/admin/predictions.html:36
+msgid "No predictions recorded yet."
+msgstr ""
+
+#: templates/admin/dashboard.html:157 templates/admin/diseases.html:27
+#: templates/user/dashboard.html:194 templates/user/history.html:15
+msgid "Healthy"
+msgstr ""
+
+#: templates/admin/dashboard.html:157 templates/user/dashboard.html:194
+#: templates/user/history.html:20
+msgid "Diseased"
+msgstr ""
+
+#: templates/admin/diseases.html:2
+msgid "Manage Diseases"
+msgstr ""
+
+#: templates/admin/diseases.html:4
+msgid "Disease Knowledge Base"
+msgstr ""
+
+#: templates/admin/diseases.html:12
+msgid "Crop"
+msgstr ""
+
+#: templates/admin/diseases.html:13 templates/admin/diseases.html:29
+msgid "Disease"
+msgstr ""
+
+#: templates/admin/diseases.html:14
+msgid "Class Label"
+msgstr ""
+
+#: templates/admin/diseases.html:15
+msgid "Status"
+msgstr ""
+
+#: templates/admin/diseases.html:32
+msgid "Edit"
+msgstr ""
+
+#: templates/admin/diseases.html:38
+msgid "No disease entries found."
+msgstr ""
+
+#: templates/admin/edit_disease.html:2
+msgid "Edit Disease Info"
+msgstr ""
+
+#: templates/admin/edit_disease.html:9
+msgid "Class label"
+msgstr ""
+
+#: templates/admin/edit_disease.html:12 templates/admin/edit_disease.html:38
+msgid "Disease Name"
+msgstr ""
+
+#: templates/admin/edit_disease.html:16 templates/admin/edit_disease.html:42
+#: templates/user/result.html:40
+msgid "Symptoms"
+msgstr ""
+
+#: templates/admin/edit_disease.html:20 templates/admin/edit_disease.html:46
+#: templates/user/result.html:48
+msgid "Causes"
+msgstr ""
+
+#: templates/admin/edit_disease.html:24 templates/admin/edit_disease.html:50
+msgid "Treatment Recommendation"
+msgstr ""
+
+#: templates/admin/edit_disease.html:34
+msgid "Crop Name"
+msgstr ""
+
+#: templates/admin/edit_disease.html:55 templates/user/profile.html:35
+msgid "Save Changes"
+msgstr ""
+
+#: templates/admin/edit_disease.html:56
+msgid "Cancel"
+msgstr ""
+
+#: templates/admin/login.html:2 templates/admin/login.html:8
+msgid "Admin Login"
+msgstr ""
+
+#: templates/admin/login.html:11
+msgid "Admin Username"
+msgstr ""
+
+#: templates/admin/login.html:15 templates/auth/login.html:15
+#: templates/auth/register.html:32
+msgid "Password"
+msgstr ""
+
+#: templates/admin/login.html:18
+msgid "Login as Admin"
+msgstr ""
+
+#: templates/admin/predictions.html:2
+msgid "All Predictions"
+msgstr ""
+
+#: templates/admin/predictions.html:4
+msgid "Full Prediction History"
+msgstr ""
+
+#: templates/admin/users.html:2
+msgid "Manage Users"
+msgstr ""
+
+#: templates/admin/users.html:4
+msgid "Registered Users"
+msgstr ""
+
+#: templates/admin/users.html:13 templates/auth/register.html:11
+#: templates/user/profile.html:19
+msgid "Full Name"
+msgstr ""
+
+#: templates/admin/users.html:14 templates/auth/register.html:15
+#: templates/user/profile.html:11
+msgid "Username"
+msgstr ""
+
+#: templates/admin/users.html:15 templates/user/profile.html:15
+msgid "Email"
+msgstr ""
+
+#: templates/admin/users.html:16
+msgid "Phone"
+msgstr ""
+
+#: templates/admin/users.html:17 templates/user/dashboard.html:173
+msgid "Scans"
+msgstr ""
+
+#: templates/admin/users.html:18
+msgid "Joined"
+msgstr ""
+
+#: templates/admin/users.html:36
+msgid "No users registered yet."
+msgstr ""
+
+#: templates/auth/login.html:8
+msgid "User Login"
+msgstr ""
+
+#: templates/auth/login.html:11
+msgid "Username or Email"
+msgstr ""
+
+#: templates/auth/login.html:20
+msgid "Remember me"
+msgstr ""
+
+#: templates/auth/login.html:25
+msgid "Don't have an account?"
+msgstr ""
+
+#: templates/auth/login.html:25
+msgid "Register here"
+msgstr ""
+
+#: templates/auth/register.html:8
+msgid "Create an Account"
+msgstr ""
+
+#: templates/auth/register.html:19
+msgid "Email Address"
+msgstr ""
+
+#: templates/auth/register.html:23 templates/user/profile.html:23
+msgid "Phone Number"
+msgstr ""
+
+#: templates/auth/register.html:27 templates/user/profile.html:27
+msgid "Address"
+msgstr ""
+
+#: templates/auth/register.html:36
+msgid "Confirm Password"
+msgstr ""
+
+#: templates/auth/register.html:43
+msgid "Already have an account?"
+msgstr ""
+
+#: templates/auth/register.html:43
+msgid "Login here"
+msgstr ""
+
+#: templates/user/dashboard.html:4
+msgid "Welcome"
+msgstr ""
+
+#: templates/user/dashboard.html:11
+msgid "Total Scans"
+msgstr ""
+
+#: templates/user/dashboard.html:21
+msgid "Healthy Plants"
+msgstr ""
+
+#: templates/user/dashboard.html:31
+msgid "Diseased Cases Detected"
+msgstr ""
+
+#: templates/user/dashboard.html:40
+msgid "Quick Action"
+msgstr ""
+
+#: templates/user/dashboard.html:42
+msgid "Upload New Image"
+msgstr ""
+
+#: templates/user/dashboard.html:54
+msgid "Local Weather & Disease Risk"
+msgstr ""
+
+#: templates/user/dashboard.html:62
+msgid "Humidity"
+msgstr ""
+
+#: templates/user/dashboard.html:63
+msgid "Wind"
+msgstr ""
+
+#: templates/user/dashboard.html:67
+msgid "Disease Risk"
+msgstr ""
+
+#: templates/user/dashboard.html:70
+msgid "Couldn't load weather for"
+msgstr ""
+
+#: templates/user/dashboard.html:70
+msgid "Try another city below."
+msgstr ""
+
+#: templates/user/dashboard.html:74
+msgid "Enter city"
+msgstr ""
+
+#: templates/user/dashboard.html:75
+msgid "Check"
+msgstr ""
+
+#: templates/user/dashboard.html:85
+msgid "Healthy vs Diseased Plants"
+msgstr ""
+
+#: templates/user/dashboard.html:91
+msgid "View healthy plants"
+msgstr ""
+
+#: templates/user/dashboard.html:94
+msgid "View diseased plants"
+msgstr ""
+
+#: templates/user/dashboard.html:97 templates/user/dashboard.html:110
+msgid "Click a slice to see the list."
+msgstr ""
+
+#: templates/user/dashboard.html:106
+msgid "Breakdown by Disease"
+msgstr ""
+
+#: templates/user/dashboard.html:120
+msgid "Scans Over the Last 14 Days"
+msgstr ""
+
+#: templates/user/dashboard.html:127
+msgid "Recent Predictions"
+msgstr ""
+
+#: templates/user/dashboard.html:147
+msgid "View"
+msgstr ""
+
+#: templates/user/dashboard.html:153 templates/user/history.html:64
+msgid "Upload your first leaf image"
+msgstr ""
+
+#: templates/user/history.html:2
+msgid "Prediction History"
+msgstr ""
+
+#: templates/user/history.html:4
+msgid "My Prediction History"
+msgstr ""
+
+#: templates/user/history.html:10
+msgid "All"
+msgstr ""
+
+#: templates/user/history.html:26
+msgid "Showing only"
+msgstr ""
+
+#: templates/user/history.html:27
+msgid "Clear filter"
+msgstr ""
+
+#: templates/user/history.html:55
+msgid "View Details"
+msgstr ""
+
+#: templates/user/history.html:61
+msgid "No plants match this filter."
+msgstr ""
+
+#: templates/user/history.html:62
+msgid "Show all"
+msgstr ""
+
+#: templates/user/profile.html:2 templates/user/profile.html:8
+msgid "My Profile"
+msgstr ""
+
+#: templates/user/profile.html:32
+msgid "New Password"
+msgstr ""
+
+#: templates/user/profile.html:32
+msgid "leave blank to keep current password"
+msgstr ""
+
+#: templates/user/result.html:2
+msgid "Prediction Result"
+msgstr ""
+
+#: templates/user/result.html:22
+msgid "Confidence Score"
+msgstr ""
+
+#: templates/user/result.html:29
+msgid "Scanned on"
+msgstr ""
+
+#: templates/user/result.html:56
+msgid "Treatment"
+msgstr ""
+
+#: templates/user/result.html:64
+msgid "Great news! This leaf appears healthy."
+msgstr ""
+
+#: templates/user/result.html:68
+msgid "No recommendation data found for this class yet. Please contact the admin."
+msgstr ""
+
+#: templates/user/result.html:74
+msgid "Scan Another Leaf"
+msgstr ""
+
+#: templates/user/result.html:77
+msgid "View History"
+msgstr ""
+
+#: templates/user/upload.html:2
+msgid "Upload Leaf Image"
+msgstr ""
+
+#: templates/user/upload.html:19
+msgid "Detect Disease"
+msgstr ""
+
+#: templates/user/upload.html:22
+msgid "Supported formats: JPG, JPEG, PNG (max 5 MB)"
+msgstr ""
+
+#: utils/decorators.py:22
+msgid "Please log in as admin to continue."
+msgstr ""
+

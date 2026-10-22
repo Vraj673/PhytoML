@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}{{ _('All Predictions') }}{% endblock %}
+{% block content %}
+<h3 class="mb-4"><i class="bi bi-graph-up"></i> {{ _('Full Prediction History') }}</h3>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body p-0">
+        {% if predictions %}
+        <table class="table table-hover mb-0 align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>{{ _('Image') }}</th>
+                    <th>{{ _('User') }}</th>
+                    <th>{{ _('Predicted Class') }}</th>
+                    <th>{{ _('Confidence') }}</th>
+                    <th>{{ _('Date') }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in predictions %}
+                <tr>
+                    <td><img src="{{ url_for('static', filename=p.image_path) }}" width="50" height="50" style="object-fit:cover;" class="rounded"></td>
+                    <td>{{ p.user.username }}</td>
+                    <td>{{ p.predicted_class | pretty_class }}</td>
+                    <td>
+                        <span class="badge {{ 'bg-success' if 'healthy' in p.predicted_class else 'bg-danger' }}">
+                            {{ p.confidence }}%
+                        </span>
+                    </td>
+                    <td>{{ p.created_at | datetimeformat('d MMM y, HH:mm') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="text-muted p-3 mb-0">{{ _('No predictions recorded yet.') }}</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

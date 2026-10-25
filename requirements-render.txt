@@ -12,3 +12,4 @@ scikit-learn==1.7.2
 joblib==1.5.2
 Pillow==11.3.0
 gunicorn==23.0.0
+requests
